@@ -1,0 +1,2 @@
+# mindb
+a mini rocksdb
