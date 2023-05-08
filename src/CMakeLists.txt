@@ -1,0 +1,11 @@
+file(GLOB_RECURSE CPP_MINDB_SERVER_SRC RELATIVE
+  "${CMAKE_CURRENT_SOURCE_DIR}"
+  "${CMAKE_CURRENT_SOURCE_DIR}/*.cc"
+  "${CMAKE_CURRENT_SOURCE_DIR}/*/*.cc")
+
+add_library(mindb STATIC
+  ${CPP_MINDB_SERVER_SRC})
+
+if(HAVE_CRC32C)
+  target_link_libraries(mindb crc32c)
+endif(HAVE_CRC32C)
